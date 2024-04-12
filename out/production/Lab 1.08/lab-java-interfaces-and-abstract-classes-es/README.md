@@ -11,3 +11,5 @@ Imagina que estás organizando un picnic y necesitas una bolsa para llevar tus b
 
 Así que, elige la mochila que se adapte mejor a tus necesidades: ¿una que crezca poco a poco como `IntArrayList`, o una que crezca rápidamente como `IntVector`? ¡Depende de cuántas cosas necesites llevar contigo!
 
+
+Ángel Fernández.
