@@ -3,22 +3,21 @@
 
 # LAB | Java Interfaces y clases abstractas
 
-Respuesta a ejercicio de la interfaz IntList comparando la eficiencia de `IntArrayList` e `IntVector`:
-
-## **Eficiencia**
-
-***Interfaz.IntArrayList*** sería más eficiente cuando:
-
- - La memoria del ordenador va justa y necesitamos ahorrar espacio.
- - Los Arrays no crecen muy a menudo, sñolo esporádicamente.
-
-
-***Interfaz.IntVector*** sería más eficiente cuando:
-
- - El Array se tiene que aumentar frecuentemente y queremos evitar
-   realizar los cambios de array tantas veces.
- - El costo de duplicar el tamaño del Array es aceptable en términos de
-   memoria.
+> Respuesta a ejercicio de la interfaz IntList comparando la eficiencia
+> de `IntArrayList` e `IntVector`:
+> 
+> ## **Eficiencia**
+> 
+> ***Interfaz.IntArrayList*** sería más eficiente cuando:
+> 
+>  - La memoria del ordenador va justa y necesitamos ahorrar espacio.
+>  - Los Arrays no crecen muy a menudo, sñolo esporádicamente.
+> 
+> 
+> ***Interfaz.IntVector*** sería más eficiente cuando:
+> 
+>  - El Array se tiene que aumentar frecuentemente y queremos evitar    realizar los cambios de array tantas veces.
+>  - El costo de duplicar el tamaño del Array es aceptable en términos de    memoria.
 
 <br>
 <br>
