@@ -41,7 +41,7 @@ public class Main {
         IntArrayList intArrayList1 = new IntArrayList();
 
         intArrayList1.add(32);
-        intArrayList1.add(67)
+        intArrayList1.add(67);
 
         intVector1.add(34);
         intVector1.add(32);

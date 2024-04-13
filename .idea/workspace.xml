@@ -5,23 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a08f5877-dba6-4287-bee4-8502f8cc0489" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Lab 1.08_Interfaces y Clases Abstractas.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automoviles/Car.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automoviles/Sedan.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automoviles/Truck.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Automoviles/UtilityVehicle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interfaz/IntArrayList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interfaz/IntList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Interfaz/IntVector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Video/Movie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Video/TvSeries.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Video/Video.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +26,9 @@
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
 }</component>
@@ -51,16 +38,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/CURSO BACK END_IRONHACK/Miguel Proyectos/Semana3/Lab 1.08_Interfaces y Clases Abstractas&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/CURSO BACK END_IRONHACK/Ironhack Github/Semana3/Lab_1.08_Interfaces-and-Abstract-Classes_Miguel_Angel"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
