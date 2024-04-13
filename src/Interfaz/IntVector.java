@@ -14,16 +14,16 @@ public class IntVector implements IntList{
     @Override
     public void add(int number) {
 
-        if (index < arraySize){
-            numbers[index] = number;
-            index++;
-            System.out.println("IntVector: "+Arrays.toString(numbers));
-        } else {
+        if (index >= arraySize){
             arraySize = arraySize * 2;
             int[] numbers2 = new int[arraySize];
             System.arraycopy(numbers, 0, numbers2, 0, numbers.length);
             numbers = numbers2;
             System.out.println("IntVector: Nuevo tamaño del array: " + arraySize);
+        } else {
+            numbers[index] = number;
+            index++;
+            System.out.println("IntVector: "+Arrays.toString(numbers));
 
         }
     }

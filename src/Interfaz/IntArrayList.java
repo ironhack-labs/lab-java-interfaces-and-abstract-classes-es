@@ -16,16 +16,16 @@ public class IntArrayList implements IntList{
     @Override
     public void add(int number) {
 
-        if (index < arraySize) {
-            numbers[index] = number;
-            index++;
-            System.out.println("IntArrayList: " + Arrays.toString(numbers));
-        } else {
-            arraySize = arraySize * 2;
+        if (index >= arraySize) {
+            arraySize = (int)(arraySize * 1.5);
             int[] numbers2 = new int[arraySize];
             System.arraycopy(numbers, 0, numbers2, 0, numbers.length);
             numbers = numbers2;
             System.out.println("IntArrayList: Nuevo tamaño del array: " + arraySize);
+        } else {
+            numbers[index] = number;
+            index++;
+            System.out.println("IntArrayList: " + Arrays.toString(numbers));
 
         }
     }
