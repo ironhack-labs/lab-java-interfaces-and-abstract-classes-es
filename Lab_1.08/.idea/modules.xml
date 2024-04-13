@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Lab_1.08.iml" filepath="$PROJECT_DIR$/.idea/Lab_1.08.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autoInvent/autoInvent.iml" filepath="$PROJECT_DIR$/autoInvent/autoInvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bigDec/bigDec.iml" filepath="$PROJECT_DIR$/bigDec/bigDec.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vidStream/vidStream.iml" filepath="$PROJECT_DIR$/vidStream/vidStream.iml" />
+    </modules>
+  </component>
+</project>
