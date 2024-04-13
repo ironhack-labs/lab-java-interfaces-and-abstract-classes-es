@@ -40,8 +40,7 @@ public class Main {
         IntVector intVector1 = new IntVector ();
         IntArrayList intArrayList1 = new IntArrayList();
 
-        intArrayList1.add(32);
-        intArrayList1.add(67);
+
 
         intVector1.add(34);
         intVector1.add(32);
@@ -56,6 +55,22 @@ public class Main {
         intVector1.add(4);
         intVector1.add(56);
         intVector1.add(89);
+
+        intArrayList1.add(32);
+        intArrayList1.add(67);
+        intArrayList1.add(67);
+        intArrayList1.add(67);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(89);
+        intArrayList1.add(829);
+        intArrayList1.add(893);
 
         intVector1.get(2);
         intVector1.get(10);
