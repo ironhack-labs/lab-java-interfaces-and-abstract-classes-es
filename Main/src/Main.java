@@ -1,6 +1,5 @@
-import Classes.Sedan;
-import Classes.Trucks;
-import Classes.UtilityVehicle;
+import Classes.*;
+import Interfaces.*;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -10,6 +9,7 @@ public class Main {
 
         bigDecimalOperations();
         carClasses();
+        videoTypes();
 
     }
 
@@ -48,4 +48,11 @@ public class Main {
         System.out.println(vehicle3.getInfo());
     }
 
+    private static  void videoTypes(){
+        Movie video1 = new Movie("Harry Potter and the Philosopher's Stone",152, 7.6);
+        TvSeries video2 = new TvSeries("Chicago PD", 40, 186);
+
+        System.out.println(video1.getInfo());
+        System.out.println(video2.getInfo());
+    }
 }
