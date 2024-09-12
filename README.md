@@ -66,7 +66,11 @@ Una vez que termines la tarea, envía un enlace URL a tu repositorio o tu solici
    - `get (int id)`: un método que recupera un elemento por su ID
 2. Crea dos implementaciones de `IntList`: `IntArrayList` y `IntVector`.
 3. `IntArrayList` debe almacenar números en un array con una longitud de 10 por defecto. Cuando se llama al método `add`, primero debes determinar si el array está lleno. Si lo está, crea un nuevo array que sea el 50% más grande, mueve todos los elementos al nuevo array y agregue el nuevo elemento. (Por ejemplo, un array de longitud 10 aumentaría a 15).
+IntArrayList será más eficiente cuando sabemos que la obtención de datos será de manera lenta y controlado, ya que así malgastamos menos espacio en memoria.
+
 4. `IntVector` debe almacenar números en un arreglo con una longitud de 20 por defecto. Cuando se llama al método `add`, primero debes determinar si el array está lleno. Si lo está, crea un nuevo array que sea el doble del tamaño del array actual, mueve todos los elementos al nuevo array y agrega el nuevo elemento. (Por ejemplo, un array de longitud 10 aumentaría a 20).
+IntVector será más eficiente si la cantidad de datos que tenemos es muy alta ya que nos ahorramos tiempo de ejecución añadiendo muchos datos en una sola pasada, en vez de estar repitiendolo poco a poco.
+
 5. En su `README.md`, incluye un ejemplo de cuándo `IntArrayList` sería más eficiente y cuándo `IntVector` sería más eficiente.
 
 <br>
