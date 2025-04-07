@@ -33,16 +33,16 @@ Una vez que termines la tarea, envía un enlace URL a tu repositorio o tu solici
 
 ### Sistema de inventario de automóviles
 
-1. Supongamos que estás construyendo un sistema de inventario de automóviles. Todos los automóviles tienen un `vinNumber`, `make`, `model` y `mileage`. Pero ningún automóvil es solo un automóvil cualquiera. Cada automóvil puede ser un `Sedan`, un `UtilityVehicle` o un `Truck`.
-2. Crea una clase abstracta llamada `Car` y define las siguientes propiedades y comportamientos:
+1. Supongamos que estás construyendo un sistema de inventario de automóviles. Todos los automóviles tienen un `vinNumber`, `make`, `model` y `mileage`. Pero ningún automóvil es solo un automóvil cualquiera. Cada automóvil puede ser un `vehicles.Sedan`, un `vehicles.UtilityVehicle` o un `vehicles.Truck`.
+2. Crea una clase abstracta llamada `vehicles.Car` y define las siguientes propiedades y comportamientos:
    - `vinNumber`: una `String` que representa el número de VIN del automóvil
    - `make`: una `String` que representa la marca del automóvil
    - `model`: una `String` que representa el modelo del automóvil
    - `mileage`: un `int` que representa el kilometraje del automóvil
    - `getInfo()`: un método que devuelve una `String` que contiene todas las propiedades del automóvil en un formato legible
-3. Crea tres clases que extiendan `Car`: `Sedan`, `UtilityVehicle` y `Truck`.
-4. Los objetos de `UtilityVehicle` deben tener una propiedad adicional `fourWheelDrive`, un `boolean` que representa si el vehículo tiene tracción en las cuatro ruedas.
-5. Los objetos de `Truck` deben tener una propiedad adicional `towingCapacity`, un `double` que representa la capacidad de remolque del camión.
+3. Crea tres clases que extiendan `vehicles.Car`: `vehicles.Sedan`, `vehicles.UtilityVehicle` y `vehicles.Truck`.
+4. Los objetos de `vehicles.UtilityVehicle` deben tener una propiedad adicional `fourWheelDrive`, un `boolean` que representa si el vehículo tiene tracción en las cuatro ruedas.
+5. Los objetos de `vehicles.Truck` deben tener una propiedad adicional `towingCapacity`, un `double` que representa la capacidad de remolque del camión.
 
 <br>
 
@@ -70,6 +70,20 @@ Una vez que termines la tarea, envía un enlace URL a tu repositorio o tu solici
 5. En su `README.md`, incluye un ejemplo de cuándo `IntArrayList` sería más eficiente y cuándo `IntVector` sería más eficiente.
 
 <br>
+<!--5. En su `README.md`, incluye un ejemplo de cuándo `IntArrayList` sería más eficiente y cuándo `IntVector` sería más eficiente.-->
+Ejemplo de IntArrayList e IntVector:
+IntArrayList --> Crecimiento moderado del espacio, aumentándolo en un 50% si está lleno, de manera controlada. 
+Es más eficiente en cuanto uso de memoria, reduciendo la cantidad de espacio no utilizado.
+Se utiliza donde rara vez los elementos llegan alcanzar el límite del array.
+Ejemplo, se usa en el registro de datos periódicos y en bajo número.
+
+IntVector --> Crecimiento rápido y significativo, se espera que los elementos aumenten rápidamente.
+Se utilizan en entornos donde el costo de redimensionar es significativo. 
+Es más eficiente con respecto que supone un menor número de operaciones de copia a lo largo del tiempo y con sistemas de memoria disponible.
+Ejemplo, Sistemas de monitoreo donde necesitamos guardar grandes bloques de datos con frecuencia. Registro de logs de una aplicación.
+
+
+<br>
 
 ## FAQs (Preguntas frecuentes)
 
@@ -77,7 +91,7 @@ Una vez que termines la tarea, envía un enlace URL a tu repositorio o tu solici
 
 <details>
   <summary style="font-size: 16px; cursor: pointer; outline: none; font-weight: bold;">Estoy atascado y no sé cómo resolver el problema o por dónde empezar. ¿Qué debo hacer?</summary>
-
+   
   <!-- ✅ -->
 
   Si estás atascado con tu código y no sabes cómo resolver el problema o por dónde empezar, debes dar un paso atrás y tratar de formular una pregunta clara y directa sobre el problema específico que enfrentas. El proceso que seguirás al tratar de definir esta pregunta te ayudará a limitar el problema y a encontrar soluciones potenciales.
