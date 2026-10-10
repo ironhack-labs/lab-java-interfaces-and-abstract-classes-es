@@ -337,3 +337,98 @@ Una vez que termines la tarea, envía un enlace URL a tu repositorio o tu solici
   ```
 
 </details>
+
+---
+
+## Solution notes (English)
+
+### Project structure and how to build and run
+
+The solution is a single Maven project at the repository root
+(`com.ironhack:lab-java-interfaces-and-abstract-classes:1.0-SNAPSHOT`, compiled with `maven.compiler.release=17`, sources in UTF-8):
+
+```text
+src/main/java/com/ironhack/lab/
+├── Main.java                        runs all four exercises and prints the results
+├── bigdecimal/
+│   └── BigDecimalOperations.java    roundToHundredth, reverseSignAndRoundToTenth
+├── cars/
+│   ├── Car.java                     abstract base: vinNumber, make, model, mileage, getInfo()
+│   ├── Sedan.java
+│   ├── UtilityVehicle.java          adds fourWheelDrive
+│   └── Truck.java                   adds towingCapacity
+├── videos/
+│   ├── Video.java                   abstract base: title, duration, getInfo()
+│   ├── TvSeries.java                adds episodes
+│   └── Movie.java                   adds rating
+└── intlist/
+    ├── IntList.java                 interface: add(int number), get(int id)
+    ├── IntArrayList.java            capacity 10, grows by 50%
+    └── IntVector.java               capacity 20, doubles
+```
+
+Build and run:
+
+```bash
+mvn -B clean compile
+mvn -B exec:java -Dexec.mainClass=com.ironhack.lab.Main
+```
+
+`Main` is how the solution is verified: it prints the two BigDecimal results, the `getInfo()` line of one
+vehicle of each type and one video of each type, and the capacity trace of both `IntList` implementations,
+including a rejected out-of-range `get`.
+
+Two notes on the exercises themselves:
+
+- `roundToHundredth` returns a `double` because the exercise asks for one. `reverseSignAndRoundToTenth`
+  returns a `BigDecimal`, which keeps the scale that rounding established, so the result prints as `-1.2`
+  rather than a binary artefact such as `-1.2000000000000002`.
+- `getInfo()` is concrete in `Car` and `Video`. The subclasses call `super.getInfo()` and append only the
+  property they add, so the shared fields are formatted in one place.
+
+### IntArrayList vs IntVector
+
+Both classes do the same job: keep the numbers in an `int[]`, and when that array is full, allocate a bigger
+one, copy every element across and then store the new number. Both therefore give amortised O(1) appends.
+The only difference is how much bigger the replacement array is:
+
+|                | default capacity | growth when full                |
+| -------------- | ---------------- | ------------------------------- |
+| `IntArrayList` | 10               | +50% (10 → 15 → 22 → 33 → …)    |
+| `IntVector`    | 20               | ×2 (20 → 40 → 80 → 160 → …)     |
+
+That one number is a trade. Growing by 50% keeps the array close to the number of elements actually stored,
+so little memory is wasted, but the list reallocates and copies more often. Doubling reallocates about half
+as often and copies far fewer elements in total, but right after a resize half the array is empty.
+
+### Worked examples
+
+The numbers below were measured by running the classes in this repository: append *n* values, count one
+resize every time the capacity changes, and add the capacity being replaced to the element-copy total.
+
+**When `IntArrayList` is more efficient — a small list whose size is roughly known (21 elements)**
+
+|                | resizes | elements copied | final capacity | unused slots       |
+| -------------- | ------- | --------------- | -------------- | ------------------ |
+| `IntArrayList` | 2       | 25              | 22             | 1 (95% utilised)   |
+| `IntVector`    | 1       | 20              | 40             | 19 (53% utilised)  |
+
+`IntArrayList` walks 10 → 15 → 22 and lands one slot above the 21 elements it holds, while `IntVector` jumps
+20 → 40 and ends up with nearly half its array empty. To be fair to `IntVector`, it does one fewer resize and
+five fewer element copies here — the `IntArrayList` win is memory, not work. That is the right trade when the
+list is small or its size is roughly known, and especially when a program holds thousands of such lists,
+where the wasted 19 slots per list are what actually add up.
+
+**When `IntVector` is more efficient — a large list appended to with no size known up front (10,000 elements)**
+
+|                | resizes | elements copied | final capacity | unused slots       |
+| -------------- | ------- | --------------- | -------------- | ------------------ |
+| `IntArrayList` | 18      | 28,096          | 14,053         | 4,053 (71% utilised) |
+| `IntVector`    | 9       | 10,220          | 10,240         | 240 (98% utilised)   |
+
+Here doubling wins on every count: half the reallocations, about a third of the element copying, *and* a
+tighter final array. The 1.5× factor does not just reallocate more often, it also happens to overshoot 10,000
+badly (14,053), which is the luck of where the growth sequence falls.
+
+**Rule of thumb:** small or known-size lists, and many of them, favour `IntArrayList`'s 1.5× growth; large
+append-heavy lists of unknown size favour `IntVector`'s doubling.
